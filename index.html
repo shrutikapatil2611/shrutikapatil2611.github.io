@@ -1,498 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shrutika Patil — Data Engineering Manager</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrutika Patil — Data Engineering Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive: #4a5e2a;
+    --olive-light: #6b8a3a;
+    --olive-pale: #f0f4e8;
+    --olive-mid: #c8d9a0;
+    --cream: #fafaf7;
+    --ink: #1c1c18;
+    --muted: #6b6b60;
+    --border: #e2e8d0;
+  }
 
-    :root {
-      --olive: #556B2F;
-      --olive-light: #7a9a45;
-      --olive-faint: #f4f6f0;
-      --olive-mid: #e8edd8;
-      --text: #1a1a1a;
-      --muted: #666;
-      --border: #dde3cc;
-      --white: #ffffff;
-      --page-width: 780px;
-    }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { font-size: 16px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #f7f8f4;
-      color: var(--text);
-      min-height: 100vh;
-      padding: 0 0 80px;
-    }
+  .header {
+    background: var(--olive);
+    color: white;
+    padding: 56px 64px 48px;
+    position: relative;
+    overflow: hidden;
+  }
 
-    /* ── COVER BAND ── */
-    .cover {
-      background: var(--olive);
-      height: 120px;
-      width: 100%;
-    }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
 
-    /* ── PAGE CONTAINER ── */
-    .page {
-      max-width: var(--page-width);
-      margin: 0 auto;
-      padding: 0 40px;
-    }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 30%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
 
-    /* ── HEADER ── */
-    .header {
-      margin-top: -28px;
-      margin-bottom: 36px;
-    }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
 
-    .avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--olive-mid);
-      border: 4px solid var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Lora', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--olive);
-      margin-bottom: 16px;
-      box-shadow: 0 2px 12px rgba(85,107,47,0.15);
-    }
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 52px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
 
-    .name {
-      font-family: 'Lora', serif;
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.1;
-      margin-bottom: 4px;
-    }
+  .title {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 32px;
+  }
 
-    .title-tag {
-      display: inline-block;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--olive);
-      background: var(--olive-faint);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 3px 10px;
-      margin-bottom: 18px;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+    font-size: 13px;
+  }
 
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 20px;
-      margin-bottom: 4px;
-    }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    opacity: 0.88;
+  }
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+  .contact-item a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 1px;
+    transition: opacity 0.2s;
+  }
 
-    .contact-item:hover { color: var(--olive); }
+  .contact-item a:hover { opacity: 0.65; }
 
-    .contact-item svg {
-      width: 13px;
-      height: 13px;
-      flex-shrink: 0;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+  .contact-icon {
+    width: 14px; height: 14px;
+    opacity: 0.65;
+    flex-shrink: 0;
+  }
 
-    /* ── DIVIDER ── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 28px 0;
-    }
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 64px 80px;
+  }
 
-    /* ── SECTION ── */
-    .section { margin-bottom: 32px; }
+  .section {
+    margin-bottom: 42px;
+    animation: fadeUp 0.5s ease both;
+  }
 
-    .section-label {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--olive);
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.15s; }
+  .section:nth-child(4) { animation-delay: 0.2s; }
+  .section:nth-child(5) { animation-delay: 0.25s; }
+  .section:nth-child(6) { animation-delay: 0.3s; }
 
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
-    /* ── PROFILE BULLETS ── */
-    .profile-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+  .section-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--olive-light);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
-    .profile-list li {
-      display: flex;
-      gap: 10px;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      color: #333;
-    }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
 
-    .profile-list li::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--olive);
-      flex-shrink: 0;
-      margin-top: 8px;
-    }
+  /* Profile */
+  .profile-list {
+    list-style: none;
+    display: grid;
+    gap: 9px;
+  }
 
-    /* ── JOB ENTRY ── */
-    .job { margin-bottom: 28px; }
+  .profile-list li {
+    padding: 13px 16px;
+    background: var(--olive-pale);
+    border-left: 3px solid var(--olive-light);
+    border-radius: 0 6px 6px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
 
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 4px;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
+  .profile-list li strong { color: var(--olive); }
 
-    .job-title {
-      font-family: 'Lora', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-    }
+  /* Jobs */
+  .job { margin-bottom: 30px; }
 
-    .job-company {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--olive);
-      font-style: italic;
-    }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
 
-    .job-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      white-space: nowrap;
-      padding-top: 2px;
-    }
+  .job-title-line { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
 
-    .job-bullets {
-      list-style: none;
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
+  .job-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16.5px;
+    color: var(--ink);
+  }
 
-    .job-bullets li {
-      display: flex;
-      gap: 10px;
-      font-size: 0.865rem;
-      line-height: 1.6;
-      color: #333;
-    }
+  .job-company {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--olive-light);
+    font-style: italic;
+  }
 
-    .job-bullets li::before {
-      content: '–';
-      color: var(--olive-light);
-      flex-shrink: 0;
-      font-weight: 500;
-      margin-top: 0px;
-    }
+  .job-meta {
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
 
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+  .job-bullets {
+    list-style: none;
+    display: grid;
+    gap: 7px;
+  }
 
-    .skill-row {
-      display: flex;
-      gap: 12px;
-      font-size: 0.865rem;
-      line-height: 1.5;
-    }
+  .job-bullets li {
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding-left: 16px;
+    position: relative;
+    color: #2c2c26;
+  }
 
-    .skill-label {
-      font-weight: 500;
-      color: var(--olive);
-      min-width: 140px;
-      flex-shrink: 0;
-      font-size: 0.8rem;
-      padding-top: 1px;
-    }
+  .job-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--olive-mid);
+    font-size: 10px;
+    top: 4px;
+  }
 
-    .skill-value { color: #333; }
+  /* Skills */
+  .skills-grid { display: grid; gap: 9px; }
 
-    /* ── CERTS ── */
-    .certs-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+  .skill-row {
+    display: flex;
+    gap: 14px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    padding: 10px 14px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
 
-    .cert-tag {
-      background: var(--olive-faint);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 4px 10px;
-      font-size: 0.78rem;
-      color: var(--olive);
-      font-weight: 500;
-    }
+  .skill-label {
+    font-weight: 600;
+    color: var(--olive);
+    min-width: 130px;
+    flex-shrink: 0;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    padding-top: 1px;
+  }
 
-    /* ── EDUCATION ── */
-    .edu-entry {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 4px;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--olive-mid);
-    }
+  .skill-value { color: var(--muted); }
 
-    .edu-entry:last-child { border-bottom: none; }
+  /* Certs */
+  .cert-list { display: flex; flex-wrap: wrap; gap: 8px; }
 
-    .edu-degree {
-      font-family: 'Lora', serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-    }
+  .cert-tag {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
 
-    .edu-school {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
+  /* Education */
+  .edu-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13.5px;
+  }
 
-    /* ── FADE IN ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+  .edu-item:last-child { border-bottom: none; }
+  .edu-degree { font-weight: 600; color: var(--ink); }
+  .edu-school { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
 
-    .header     { animation: fadeUp 0.5s ease both; }
-    .section:nth-child(1) { animation: fadeUp 0.5s 0.1s ease both; }
-    .section:nth-child(2) { animation: fadeUp 0.5s 0.18s ease both; }
-    .section:nth-child(3) { animation: fadeUp 0.5s 0.26s ease both; }
-    .section:nth-child(4) { animation: fadeUp 0.5s 0.34s ease both; }
-    .section:nth-child(5) { animation: fadeUp 0.5s 0.42s ease both; }
-    .section:nth-child(6) { animation: fadeUp 0.5s 0.50s ease both; }
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11.5px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    letter-spacing: 0.5px;
+  }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .page { padding: 0 20px; }
-      .name { font-size: 1.8rem; }
-      .job-header { flex-direction: column; }
-      .skill-label { min-width: 110px; }
-    }
-  </style>
+  @media (max-width: 640px) {
+    .header { padding: 36px 24px 32px; }
+    .main { padding: 32px 24px 60px; }
+    .name { font-size: 36px; }
+    .skill-row { flex-direction: column; gap: 3px; }
+    .skill-label { min-width: unset; }
+  }
+</style>
 </head>
 <body>
 
-  <div class="cover"></div>
-
-  <div class="page">
-
-    <!-- HEADER -->
-    <div class="header">
-      <div class="avatar">SP</div>
-      <h1 class="name">Shrutika Patil</h1>
-      <div class="title-tag">Data Engineering Manager</div>
-      <div class="contact-row">
-        <a class="contact-item" href="mailto:shrutikapatil2611@gmail.com">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-          shrutikapatil2611@gmail.com
-        </a>
-        <a class="contact-item" href="tel:7164916818">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-          (716) 491-6818
-        </a>
-        <span class="contact-item">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Vancouver, BC
-        </span>
-        <a class="contact-item" href="https://www.linkedin.com/in/shrutika-patil/" target="_blank">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          linkedin.com/in/shrutika-patil
-        </a>
-        <a class="contact-item" href="https://github.com/shrutikapatil2611" target="_blank">
-          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          github.com/shrutikapatil2611
-        </a>
+<header class="header">
+  <div class="header-inner">
+    <h1 class="name">Shrutika Patil</h1>
+    <p class="title">Data Engineering Manager</p>
+    <div class="contact-row">
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        <a href="mailto:shrutikapatil2611@gmail.com">shrutikapatil2611@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.76 5.76l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (716) 491-6818
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Vancouver, BC
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        <a href="https://www.linkedin.com/in/shrutika-patil/" target="_blank">linkedin.com/in/shrutika-patil</a>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+        <a href="https://github.com/shrutikapatil2611" target="_blank">github.com/shrutikapatil2611</a>
       </div>
     </div>
+  </div>
+</header>
 
-    <hr/>
+<main class="main">
 
-    <!-- PROFILE -->
-    <div class="section">
-      <div class="section-label">Profile</div>
-      <ul class="profile-list">
-        <li>10+ years of data engineering experience — recently built and led high-performing data engineering teams from 0 to fully operational, supporting 80% of internal departments across Product, Finance, RevOps, and Customer Success.</li>
-        <li>Proven ability to operate at the intersection of people leadership and technical depth: hiring, mentoring, and developing engineers while owning platform architecture and delivery.</li>
-        <li>Track record of translating ambiguous mandates into organized, high-velocity teams — running Agile delivery cycles, owning quarterly roadmaps, and aligning data investments with company OKRs and executive stakeholders.</li>
-        <li>Shipped customer-facing data products adopted by 30+ enterprise clients; known for building cultures of ownership, accountability, and continuous improvement.</li>
+  <section class="section">
+    <h2 class="section-label">Profile</h2>
+    <ul class="profile-list">
+      <li><strong>10+ years</strong> of data engineering experience — recently built and led high-performing data engineering teams from 0 to fully operational, supporting 80% of internal departments across Product, Finance, RevOps, and Customer Success.</li>
+      <li>Proven ability to operate at the intersection of <strong>people leadership and technical depth</strong>: hiring, mentoring, and developing engineers while owning platform architecture and delivery.</li>
+      <li>Track record of translating ambiguous mandates into <strong>organized, high-velocity teams</strong> — running Agile delivery cycles, owning quarterly roadmaps, and aligning data investments with company OKRs and executive stakeholders.</li>
+      <li>Shipped <strong>customer-facing data products</strong> adopted by 30+ enterprise clients; known for building cultures of ownership, accountability, and continuous improvement.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label">Professional Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-line">
+          <span class="job-title">Lead Data Engineer</span>
+          <span class="job-company">Virtuous Software</span>
+        </div>
+        <span class="job-meta">09/2022 – Present · Phoenix, AZ / Remote</span>
+      </div>
+      <ul class="job-bullets">
+        <li>Founded and scaled the Data Operations function from 0 to a team of 4 engineers in 18 months, establishing hiring processes, onboarding playbooks, and career development frameworks — the team now supports 80% of internal departments including Product, Finance, RevOps, and Customer Success.</li>
+        <li>Directly managed and mentored 4 data engineers; ran bi-weekly 1:1s, defined individual ownership areas and growth plans, and conducted performance reviews — building a culture of accountability and continuous development.</li>
+        <li>Owned the quarterly data platform roadmap end-to-end: gathered requirements from 6+ internal stakeholders, prioritized against company OKRs, and presented plans to VP and C-suite leadership each quarter.</li>
+        <li>Led Agile delivery for all data initiatives — ran sprint planning, backlog grooming, and retrospectives across a team managing 15+ concurrent workstreams, maintaining a consistent 85%+ sprint completion rate.</li>
+        <li>Architected and governed the full modern data stack (Snowflake, dbt, Fivetran, Sigma), reducing monthly infrastructure costs by ~22% through compute optimization, warehouse right-sizing, and query tuning.</li>
+        <li>Established data SLAs, automated pipeline monitoring, and quality frameworks — cutting mean time to detect pipeline failures from several hours to under 15 minutes and significantly increasing stakeholder trust in reporting.</li>
+        <li>Co-led cross-functional delivery of a customer-facing analytics product with Product and Engineering; managed timelines, resolved cross-team dependencies, and presented progress to executive stakeholders — adopted by 30+ enterprise clients within 3 months.</li>
+        <li>Drove adoption of AI-assisted development tools (ChatGPT, Cursor, Claude Code) across the team, reducing average pipeline development time by ~30% and improving documentation coverage across 400+ dbt models.</li>
       </ul>
     </div>
 
-    <!-- EXPERIENCE -->
-    <div class="section">
-      <div class="section-label">Professional Experience</div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Lead Data Engineer</div>
-            <div class="job-company">Virtuous Software</div>
-          </div>
-          <div class="job-meta">09/2022 – Present &nbsp;·&nbsp; Phoenix, AZ / Remote</div>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-line">
+          <span class="job-title">Senior Business Intelligence Engineer</span>
+          <span class="job-company">Navigating Cancer</span>
         </div>
-        <ul class="job-bullets">
-          <li>Founded and scaled the Data Operations function from 0 to a team of 4 engineers in 18 months, establishing hiring processes, onboarding playbooks, and career development frameworks — supporting 80% of internal departments including Product, Finance, RevOps, and Customer Success.</li>
-          <li>Directly managed and mentored 4 data engineers; ran bi-weekly 1:1s, defined individual ownership areas and growth plans, and conducted performance reviews — building a culture of accountability and continuous development.</li>
-          <li>Owned the quarterly data platform roadmap end-to-end: gathered requirements from 6+ internal stakeholders, prioritized against company OKRs, and presented plans to VP and C-suite leadership each quarter.</li>
-          <li>Led Agile delivery for all data initiatives — ran sprint planning, backlog grooming, and retrospectives across a team managing 15+ concurrent workstreams, maintaining a consistent 85%+ sprint completion rate.</li>
-          <li>Architected and governed the full modern data stack (Snowflake, dbt, Fivetran, Sigma), reducing monthly infrastructure costs by ~22% through compute optimization, warehouse right-sizing, and query tuning.</li>
-          <li>Established data SLAs, automated pipeline monitoring, and quality frameworks — cutting mean time to detect pipeline failures from several hours to under 15 minutes.</li>
-          <li>Co-led cross-functional delivery of a customer-facing analytics product with Product and Engineering — adopted by 30+ enterprise clients within 3 months of launch.</li>
-          <li>Drove adoption of AI-assisted development tools (ChatGPT, Cursor, Claude Code) across the team, reducing average pipeline development time by ~30% and improving documentation coverage across 400+ dbt models.</li>
-        </ul>
+        <span class="job-meta">07/2019 – 11/2021 · Seattle, WA</span>
       </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Senior Business Intelligence Engineer</div>
-            <div class="job-company">Navigating Cancer</div>
-          </div>
-          <div class="job-meta">07/2019 – 11/2021 &nbsp;·&nbsp; Seattle, WA</div>
-        </div>
-        <ul class="job-bullets">
-          <li>Led a team of 2 BI analysts supporting 5+ pharmaceutical clients, coordinating deliverable timelines, managing stakeholder expectations, and reviewing all analytical outputs before executive presentation.</li>
-          <li>Designed a reusable data product onboarding framework that cut new client time-to-first-insight from 6 weeks to under 2 weeks — scaled across all pharma accounts.</li>
-          <li>Partnered directly with Product, Clinical, and Commercial leadership to define analytics requirements and prioritize data product development, acting as primary technical contact for 3 client accounts.</li>
-          <li>Translated complex healthcare data models and cohort analyses into executive-ready narratives delivered to VP and C-suite audiences — consistently cited for clarity and business relevance.</li>
-          <li>Championed migration of legacy on-premise reporting to a modern cloud data warehouse — resulting in up to 60% faster query performance and self-serve analytics for non-technical users.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Data Scientist</div>
-            <div class="job-company">Deloitte</div>
-          </div>
-          <div class="job-meta">10/2018 – 06/2019 &nbsp;·&nbsp; Orlando, FL</div>
-        </div>
-        <ul class="job-bullets">
-          <li>Delivered workforce analytics and ML solutions for 4 Fortune 500 clients — including an attrition prediction model with 82% accuracy that informed $2M+ in client retention investment decisions.</li>
-          <li>Coordinated cross-functional delivery teams of data engineers, HR analysts, and strategy consultants across aggressive client timelines.</li>
-          <li>Presented analytical findings and strategic recommendations directly to CHRO and VP-level stakeholders in formal executive readout sessions.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Software Engineer</div>
-            <div class="job-company">LTI Mindtree</div>
-          </div>
-          <div class="job-meta">04/2015 – 07/2017 &nbsp;·&nbsp; Mumbai, India</div>
-        </div>
-        <ul class="job-bullets">
-          <li>Coordinated root cause analysis across operations, quality, and IT teams for 15+ critical production incidents — reduced recurring system downtime by ~35%.</li>
-          <li>Built SQL-based reporting pipelines unifying data from 6 disparate manufacturing systems into a single operational dashboard used by plant leadership.</li>
-        </ul>
-      </div>
+      <ul class="job-bullets">
+        <li>Led a team of 2 BI analysts supporting 5+ pharmaceutical clients, coordinating deliverable timelines, managing stakeholder expectations, and reviewing all analytical outputs before executive presentation.</li>
+        <li>Designed a reusable data product onboarding framework that cut new client time-to-first-insight from 6 weeks to under 2 weeks — scaled across all pharma accounts and presented to leadership as a best practice.</li>
+        <li>Partnered directly with Product, Clinical, and Commercial leadership to define analytics requirements and prioritize data product development, acting as the primary technical point of contact for 3 client accounts.</li>
+        <li>Translated complex healthcare data models and cohort analyses into executive-ready narratives delivered to VP and C-suite audiences at pharmaceutical clients — consistently cited for clarity and business relevance.</li>
+        <li>Championed migration of legacy on-premise reporting to a modern cloud data warehouse — resulting in up to 60% faster query performance and self-serve analytics for non-technical users.</li>
+      </ul>
     </div>
 
-    <!-- SKILLS -->
-    <div class="section">
-      <div class="section-label">Skills & Tools</div>
-      <div class="skills-grid">
-        <div class="skill-row">
-          <span class="skill-label">People Leadership</span>
-          <span class="skill-value">Hiring & team building, 1:1s & performance reviews, career development, mentorship, Agile/Scrum, OKR planning</span>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-line">
+          <span class="job-title">Data Scientist</span>
+          <span class="job-company">Deloitte</span>
         </div>
-        <div class="skill-row">
-          <span class="skill-label">Technical</span>
-          <span class="skill-value">Snowflake, dbt, Fivetran, Sigma Computing, Python, SQL, Azure Function App, GitHub</span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-label">Delivery & Strategy</span>
-          <span class="skill-value">Roadmap planning, stakeholder alignment, cross-functional dependency management, data governance, SLA design</span>
-        </div>
+        <span class="job-meta">10/2018 – 06/2019 · Orlando, FL</span>
       </div>
+      <ul class="job-bullets">
+        <li>Delivered workforce analytics and ML solutions for 4 Fortune 500 clients — including an attrition prediction model with 82% accuracy that informed $2M+ in client retention investment decisions.</li>
+        <li>Coordinated cross-functional delivery teams of data engineers, HR analysts, and strategy consultants; managed task assignments and ensured timely delivery against aggressive client timelines.</li>
+        <li>Presented analytical findings and strategic recommendations directly to CHRO and VP-level client stakeholders in formal executive readout sessions.</li>
+      </ul>
     </div>
 
-    <!-- CERTIFICATIONS -->
-    <div class="section">
-      <div class="section-label">Certifications</div>
-      <div class="certs-list">
-        <span class="cert-tag">DBT Analytics Engineering (2025)</span>
-        <span class="cert-tag">Tableau Desktop Certified Associate (2018)</span>
-        <span class="cert-tag">Python Institute PCEP (2018)</span>
-        <span class="cert-tag">Oracle SQL Developer Certified (2018)</span>
-        <span class="cert-tag">Pendo Essentials (2022)</span>
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-line">
+          <span class="job-title">Software Engineer</span>
+          <span class="job-company">LTI Mindtree</span>
+        </div>
+        <span class="job-meta">04/2015 – 07/2017 · Mumbai, India</span>
+      </div>
+      <ul class="job-bullets">
+        <li>Coordinated root cause analysis across operations, quality, and IT teams for 15+ critical production incidents — designed and implemented permanent fixes that reduced recurring system downtime by ~35%.</li>
+        <li>Built SQL-based reporting pipelines that unified data from 6 disparate manufacturing systems into a single operational dashboard, used by plant leadership for weekly performance reviews.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-label">Skills & Tools</h2>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-label">People Leadership</span>
+        <span class="skill-value">Hiring & team building, 1:1s & performance reviews, career development, mentorship, Agile/Scrum, OKR planning</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Technical</span>
+        <span class="skill-value">Snowflake, dbt, Fivetran, Sigma Computing, Python, SQL, Azure Function App, GitHub</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Delivery & Strategy</span>
+        <span class="skill-value">Roadmap planning, stakeholder alignment, cross-functional dependency management, data governance, SLA design</span>
       </div>
     </div>
+  </section>
 
-    <!-- EDUCATION -->
-    <div class="section">
-      <div class="section-label">Education</div>
-      <div class="edu-entry">
-        <div>
-          <div class="edu-degree">Master of Science</div>
-          <div class="edu-school">State University of New York at Buffalo (SUNY Buffalo)</div>
-        </div>
-      </div>
-      <div class="edu-entry">
-        <div>
-          <div class="edu-degree">Bachelor of Engineering</div>
-          <div class="edu-school">Amravati University</div>
-        </div>
-      </div>
+  <section class="section">
+    <h2 class="section-label">Certifications</h2>
+    <div class="cert-list">
+      <span class="cert-tag">DBT Analytics Engineering (2025)</span>
+      <span class="cert-tag">Tableau Desktop Certified Associate (2018)</span>
+      <span class="cert-tag">Python Institute PCEP (2018)</span>
+      <span class="cert-tag">Oracle SQL Developer Certified (2018)</span>
+      <span class="cert-tag">Pendo Essentials (2022)</span>
     </div>
+  </section>
 
-  </div><!-- /page -->
+  <section class="section">
+    <h2 class="section-label">Education</h2>
+    <div class="edu-item">
+      <div class="edu-degree">Master of Science</div>
+      <div class="edu-school">State University of New York at Buffalo (SUNY Buffalo)</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor of Engineering</div>
+      <div class="edu-school">Amravati University</div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  Shrutika Patil &nbsp;·&nbsp; Data Engineering Manager &nbsp;·&nbsp; Vancouver, BC
+</footer>
 
 </body>
 </html>
